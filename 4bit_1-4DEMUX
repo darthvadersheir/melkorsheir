@@ -1,0 +1,28 @@
+--BATUHAN YILDIZ 394804
+--1-4 DEMUX CODE
+
+Library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+ 
+Entity demux is
+ port(
+ 
+ I: in STD_LOGIC_VECTOR(3 downto 0);
+ E: in STD_LOGIC_VECTOR(1 downto 0);
+ X1,X2,X3,X4: out STD_LOGIC_VECTOR(3 downto 0)
+ );
+end Entity;
+ 
+Architecture Behaviour of demux is
+
+Begin
+with(E) Select
+X1 <= I when "00","ZZZZ" when others;
+with(E) Select
+X2 <= I when "01","ZZZZ" when others;
+with(E) Select
+X3 <= I when "10","ZZZZ" when others;
+with(E) Select
+X4 <= I when "11","ZZZZ" when others;
+
+End Architecture;
